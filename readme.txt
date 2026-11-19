@@ -4,7 +4,7 @@ Tags:              music, promo, download, upload, audio
 Requires at least: 6.5
 Tested up to:      6.8
 Requires PHP:      7.4
-Stable tag:        0.5.0
+Stable tag:        0.5.1
 License:           GPLv2 or later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,12 @@ Standardmäßig liefert PHP die Datei aus. Wenn der Webserver X-Accel-Redirect o
 
 == Changelog ==
 
+= 0.5.1 =
+* Bemusterungen sind jetzt nur noch über ihren Link erreichbar. Neben dem robots-Meta sendet die Promoseite einen X-Robots-Tag-Header, damit SEO-Plugins das noindex nicht mehr überschreiben.
+* All in One SEO, Yoast und Rank Math: noindex auf Promo- und Portalseite, Bemusterungen und Portalseite aus den Sitemaps, bei AIOSEO auch aus der llms.txt.
+* Keine Auflistung mehr über ?post_type=, Feeds, Anhangseiten oder die WordPress-REST-API (Beiträge, Tracks, Mediathek, Suche). Die Mediathek-API hat bisher den geheimen Ablagepfad der WAV-Master verraten.
+* Der Aufruf über die Beitrags-ID (?p=123) liefert für Besucher 404, sonst ließen sich die Seiten durch Hochzählen finden.
+
 = 0.5.0 =
 * Jeder Titel hat jetzt eine eigene, sprechende Download-Adresse der Form /bemusterung/<release>/download/<titel>/, die sich direkt in eine Mail an die Redaktion setzen lässt.
 * Im Portal stehen Download- und Vorhörlink je Titel zum Kopieren bereit.
@@ -113,6 +119,9 @@ Standardmäßig liefert PHP die Datei aus. Wenn der Webserver X-Accel-Redirect o
 * Erste Fassung.
 
 == Upgrade Notice ==
+
+= 0.5.1 =
+Macht Bemusterungen unauffindbar für Suchmaschinen, Sitemaps, llms.txt und die REST-API.
 
 = 0.5.0 =
 Bringt eigene Download-Links je Titel für den Versand an Redaktionen.
