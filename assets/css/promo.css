@@ -1,0 +1,292 @@
+/**
+ * Öffentliche Promoseite.
+ *
+ * Wie beim Portal mit eigenen, festen Farben: die Seite muss auf jedem Theme
+ * lesbar sein, auch auf sehr dunklen. Alles ist auf .mxo-promo begrenzt.
+ */
+
+.mxo-promo {
+	--promo-bg: #ffffff;
+	--promo-text: #1d2327;
+	--promo-muted: #5c6670;
+	--promo-line: #dcdfe3;
+	--promo-soft: #f4f6f8;
+	--promo-accent: #1e5fbe;
+
+	box-sizing: border-box;
+	max-width: 46rem;
+	margin: 2.5rem auto;
+	padding: 2.25rem;
+	border-radius: 10px;
+	background: var( --promo-bg );
+	color: var( --promo-text );
+	line-height: 1.6;
+	text-align: left;
+	box-shadow: 0 2px 20px rgba( 0, 0, 0, 0.18 );
+}
+
+.mxo-promo *,
+.mxo-promo *::before,
+.mxo-promo *::after {
+	box-sizing: inherit;
+}
+
+.mxo-promo h1,
+.mxo-promo h2,
+.mxo-promo h3,
+.mxo-promo p,
+.mxo-promo li,
+.mxo-promo dt,
+.mxo-promo dd,
+.mxo-promo strong,
+.mxo-promo em {
+	color: var( --promo-text ) !important;
+}
+
+.mxo-promo a {
+	color: var( --promo-accent );
+}
+
+/* Kopf */
+
+.mxo-promo__header {
+	display: flex;
+	gap: 1.75rem;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	padding-bottom: 1.75rem;
+	border-bottom: 1px solid var( --promo-line );
+}
+
+.mxo-promo__cover {
+	flex: 0 0 180px;
+	max-width: 180px;
+}
+
+.mxo-promo__cover img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.mxo-promo__intro {
+	flex: 1 1 16rem;
+	min-width: 0;
+}
+
+.mxo-promo__kicker {
+	margin: 0 0 0.25rem;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var( --promo-muted ) !important;
+}
+
+.mxo-promo__title {
+	margin: 0 0 0.2rem;
+	font-size: 1.85rem;
+	line-height: 1.2;
+}
+
+.mxo-promo__artist {
+	margin: 0 0 1rem;
+	font-size: 1.05rem;
+	color: var( --promo-muted ) !important;
+}
+
+.mxo-promo__facts {
+	display: flex;
+	gap: 1.75rem;
+	flex-wrap: wrap;
+	margin: 0;
+}
+
+.mxo-promo__facts div {
+	margin: 0;
+}
+
+.mxo-promo__facts dt {
+	margin: 0;
+	font-size: 0.72rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var( --promo-muted ) !important;
+}
+
+.mxo-promo__facts dd {
+	margin: 0;
+	font-size: 0.95rem;
+}
+
+/* Titel */
+
+.mxo-promo__tracks {
+	margin: 1.75rem 0;
+}
+
+.mxo-promo__track {
+	padding: 1.1rem 0;
+	border-bottom: 1px solid var( --promo-line );
+}
+
+.mxo-promo__track:last-child {
+	border-bottom: 0;
+}
+
+.mxo-promo__trackname {
+	margin: 0 0 0.6rem;
+	font-size: 1.1rem;
+}
+
+.mxo-promo__audio {
+	display: block;
+	width: 100%;
+	max-width: 30rem;
+	margin-bottom: 0.75rem;
+}
+
+.mxo-promo__dl {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	margin: 0;
+}
+
+.mxo-promo__filemeta {
+	font-size: 0.85rem;
+	color: var( --promo-muted ) !important;
+}
+
+/* Buttons */
+
+.mxo-promo .mxo-promo__btn {
+	display: inline-block;
+	padding: 0.6em 1.2em;
+	border: 1px solid var( --promo-accent ) !important;
+	border-radius: 5px !important;
+	background: var( --promo-accent ) !important;
+	color: #ffffff !important;
+	font-size: 0.95rem;
+	line-height: 1.3;
+	text-decoration: none !important;
+	text-transform: none !important;
+	letter-spacing: normal !important;
+}
+
+.mxo-promo .mxo-promo__btn:hover,
+.mxo-promo .mxo-promo__btn:focus {
+	background: #174a96 !important;
+	border-color: #174a96 !important;
+	color: #ffffff !important;
+}
+
+.mxo-promo .mxo-promo__btn--plain {
+	background: var( --promo-bg ) !important;
+	border-color: var( --promo-line ) !important;
+	color: var( --promo-text ) !important;
+}
+
+.mxo-promo .mxo-promo__btn--plain:hover {
+	border-color: var( --promo-accent ) !important;
+	background: var( --promo-bg ) !important;
+	color: var( --promo-accent ) !important;
+}
+
+/* Pressetext */
+
+.mxo-promo__text {
+	margin: 1.75rem 0;
+	padding-top: 1.5rem;
+	border-top: 1px solid var( --promo-line );
+}
+
+.mxo-promo__text p {
+	margin: 0 0 1rem;
+}
+
+.mxo-promo__presskit,
+.mxo-promo__contact {
+	margin: 1.25rem 0 0;
+}
+
+.mxo-promo__contact {
+	font-size: 0.9rem;
+	color: var( --promo-muted ) !important;
+}
+
+/* Rückmeldeformular */
+
+.mxo-promo .mxo-bem-feedback {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var( --promo-line );
+	display: grid;
+	gap: 0.75rem;
+	max-width: 28rem;
+}
+
+.mxo-promo .mxo-bem-feedback label {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	font-size: 0.85rem;
+	color: var( --promo-text ) !important;
+}
+
+.mxo-promo .mxo-bem-feedback input:not([type="checkbox"]):not([type="radio"]),
+.mxo-promo .mxo-bem-feedback textarea {
+	width: 100% !important;
+	padding: 0.5em 0.65em !important;
+	border: 1px solid var( --promo-line ) !important;
+	border-radius: 5px !important;
+	background: var( --promo-bg ) !important;
+	color: var( --promo-text ) !important;
+	font: inherit !important;
+	box-shadow: none !important;
+}
+
+.mxo-promo .mxo-bem-feedback__intro {
+	margin: 0;
+	font-size: 0.85rem;
+	color: var( --promo-muted ) !important;
+}
+
+.mxo-promo .mxo-bem-feedback__submit {
+	justify-self: start;
+	padding: 0.55em 1.1em !important;
+	border: 1px solid var( --promo-line ) !important;
+	border-radius: 5px !important;
+	background: var( --promo-bg ) !important;
+	color: var( --promo-text ) !important;
+	font: inherit !important;
+	cursor: pointer;
+}
+
+.mxo-promo .mxo-bem-feedback__hp {
+	position: absolute;
+	left: -9999px;
+}
+
+.mxo-promo .mxo-bem-feedback__status {
+	margin: 0;
+	font-size: 0.85rem;
+	color: var( --promo-muted ) !important;
+}
+
+@media ( max-width: 600px ) {
+	.mxo-promo {
+		margin: 1.5rem 0.75rem;
+		padding: 1.25rem;
+	}
+
+	.mxo-promo__cover {
+		flex-basis: 130px;
+		max-width: 130px;
+	}
+
+	.mxo-promo__title {
+		font-size: 1.5rem;
+	}
+}

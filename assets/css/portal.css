@@ -1,0 +1,491 @@
+/**
+ * Frontend-Portal der Bemusterung.
+ *
+ * Bewusst mit eigenen, festen Farben statt der Theme-Variablen: das Portal ist
+ * ein Arbeitswerkzeug und muss auf hellen wie dunklen Themes lesbar sein. Auf
+ * einem dunklen Theme wurde sonst Dunkel auf Dunkel gerendert.
+ *
+ * Alle Angaben sind auf .mxo-bem beschränkt, damit nichts nach außen wirkt.
+ */
+
+.mxo-bem {
+	--bem-bg: #ffffff;
+	--bem-text: #1d2327;
+	--bem-muted: #5c6670;
+	--bem-line: #dcdfe3;
+	--bem-soft: #f4f6f8;
+	--bem-accent: #1e5fbe;
+	--bem-good: #157347;
+	--bem-bad: #b3261e;
+
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+	max-width: 52rem;
+	margin: 5rem auto 3rem;
+	padding: 2rem;
+	border-radius: 10px;
+	background: var( --bem-bg );
+	color: var( --bem-text );
+	font-size: 1rem;
+	line-height: 1.5;
+	box-shadow: 0 2px 20px rgba( 0, 0, 0, 0.18 );
+	text-align: left;
+}
+
+.mxo-bem *,
+.mxo-bem *::before,
+.mxo-bem *::after {
+	box-sizing: inherit;
+}
+
+/* Theme-Überschriften und -Textfarben innerhalb des Portals neutralisieren. */
+.mxo-bem h2,
+.mxo-bem h3,
+.mxo-bem strong,
+.mxo-bem label,
+.mxo-bem p {
+	color: var( --bem-text );
+}
+
+.mxo-bem h2 {
+	font-size: 1.5rem;
+	margin: 0 0 0.5rem;
+}
+
+.mxo-bem h3 {
+	font-size: 1.15rem;
+	margin: 0 0 0.75rem;
+}
+
+.mxo-bem__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin-bottom: 1.5rem;
+}
+
+.mxo-bem__head h2 {
+	margin: 0;
+}
+
+/* Buttons */
+
+.mxo-bem__btn {
+	display: inline-block;
+	padding: 0.55em 1.1em;
+	border: 1px solid var( --bem-line );
+	border-radius: 5px;
+	background: var( --bem-bg );
+	color: var( --bem-text );
+	font: inherit;
+	line-height: 1.3;
+	text-transform: none;
+	letter-spacing: normal;
+	cursor: pointer;
+}
+
+.mxo-bem__btn:hover,
+.mxo-bem__btn:focus {
+	border-color: var( --bem-accent );
+	color: var( --bem-accent );
+	background: var( --bem-bg );
+}
+
+.mxo-bem__btn--primary,
+.mxo-bem__btn--primary:hover,
+.mxo-bem__btn--primary:focus {
+	background: var( --bem-accent );
+	border-color: var( --bem-accent );
+	color: #fff;
+}
+
+.mxo-bem__btn--danger:hover,
+.mxo-bem__btn--danger:focus {
+	border-color: var( --bem-bad );
+	color: var( --bem-bad );
+}
+
+.mxo-bem__back {
+	display: inline-block;
+	background: none;
+	border: 0;
+	padding: 0 0 1rem;
+	color: var( --bem-accent );
+	cursor: pointer;
+	font: inherit;
+}
+
+/* Übersicht */
+
+.mxo-bem__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mxo-bem__row {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.9rem 0;
+	border-bottom: 1px solid var( --bem-line );
+	flex-wrap: wrap;
+}
+
+.mxo-bem__thumb {
+	width: 56px;
+	height: 56px;
+	object-fit: cover;
+	border-radius: 5px;
+	flex-shrink: 0;
+	background: var( --bem-soft );
+}
+
+.mxo-bem__rowbody {
+	flex: 1 1 12rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	align-items: flex-start;
+}
+
+.mxo-bem__rowactions {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.mxo-bem__badge {
+	font-size: 0.72em;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 0.2em 0.55em;
+	border-radius: 3px;
+	background: var( --bem-soft );
+	color: var( --bem-muted );
+}
+
+.mxo-bem__badge.is-live {
+	background: #e3f4ea;
+	color: var( --bem-good );
+}
+
+.mxo-bem__meta,
+.mxo-bem__hint,
+.mxo-bem__empty {
+	color: var( --bem-muted );
+	font-size: 0.875em;
+}
+
+/* Formular */
+
+.mxo-bem__form {
+	display: grid;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.mxo-bem__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.mxo-bem__field > span {
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: var( --bem-text );
+}
+
+.mxo-bem__input,
+.mxo-bem input[type="text"],
+.mxo-bem input[type="date"],
+.mxo-bem input[type="email"],
+.mxo-bem textarea {
+	width: 100%;
+	padding: 0.55em 0.7em;
+	border: 1px solid var( --bem-line );
+	border-radius: 5px;
+	background: var( --bem-bg );
+	color: var( --bem-text );
+	font: inherit;
+	box-shadow: none;
+}
+
+.mxo-bem__input:focus,
+.mxo-bem textarea:focus {
+	border-color: var( --bem-accent );
+	outline: 2px solid rgba( 30, 95, 190, 0.2 );
+	outline-offset: 0;
+}
+
+.mxo-bem__actions {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+	margin-bottom: 1.5rem;
+}
+
+.mxo-bem__link {
+	flex: 1 1 18rem;
+	min-width: 0;
+}
+
+/* Dropzone */
+
+.mxo-bem__uploads {
+	margin: 2rem 0;
+}
+
+.mxo-bem__zone {
+	border: 2px dashed var( --bem-line );
+	border-radius: 8px;
+	padding: 2.5rem 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	background: var( --bem-soft );
+	transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.mxo-bem__zone:focus-visible {
+	outline: 2px solid var( --bem-accent );
+	outline-offset: 2px;
+}
+
+.mxo-bem__zone.is-over {
+	border-color: var( --bem-accent );
+	background: #eaf1fb;
+}
+
+.mxo-bem__zonetitle {
+	font-size: 1.05em;
+	color: var( --bem-text );
+}
+
+.mxo-bem__zonehint {
+	color: var( --bem-muted );
+	font-size: 0.85em;
+}
+
+.mxo-bem__file {
+	display: none;
+}
+
+.mxo-bem__progress {
+	list-style: none;
+	margin: 1rem 0 0;
+	padding: 0;
+}
+
+.mxo-bem__prow {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid var( --bem-line );
+}
+
+.mxo-bem__pname {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.mxo-bem__pstate {
+	flex-shrink: 0;
+	font-variant-numeric: tabular-nums;
+	color: var( --bem-muted );
+}
+
+.mxo-bem__prow.is-done .mxo-bem__pstate {
+	color: var( --bem-good );
+}
+
+.mxo-bem__prow.is-failed .mxo-bem__pstate {
+	color: var( --bem-bad );
+}
+
+/* Titel */
+
+.mxo-bem__tracks {
+	margin: 2rem 0;
+}
+
+.mxo-bem__track {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+	padding: 0.8rem 0;
+	border-bottom: 1px solid var( --bem-line );
+}
+
+.mxo-bem__trackbody {
+	flex: 1 1 14rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	align-items: flex-start;
+}
+
+.mxo-bem__audio {
+	width: 100%;
+	max-width: 22rem;
+}
+
+/* Veröffentlichen */
+
+.mxo-bem__publish {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var( --bem-line );
+}
+
+/* Meldungen */
+
+.mxo-bem--error,
+.mxo-bem__error {
+	padding: 1.25rem;
+	border-left: 4px solid var( --bem-bad );
+	background: var( --bem-soft );
+	color: var( --bem-text );
+}
+
+.mxo-bem__toast {
+	position: fixed;
+	left: 50%;
+	bottom: 1.5rem;
+	transform: translate( -50%, 200% );
+	padding: 0.7em 1.2em;
+	border-radius: 5px;
+	background: #24242a;
+	color: #fff;
+	transition: transform 0.2s ease;
+	z-index: 99999;
+}
+
+.mxo-bem__toast.is-visible {
+	transform: translate( -50%, 0 );
+}
+
+.mxo-bem__toast.is-error {
+	background: var( --bem-bad );
+}
+
+@media ( max-width: 600px ) {
+	.mxo-bem {
+		margin: 1.5rem 0.75rem;
+		padding: 1.25rem;
+	}
+}
+
+
+/**
+ * Durchsetzung gegenüber dem Theme.
+ *
+ * GeneratePress gibt seine Formularfarben als Customizer-CSS aus, das
+ * spezifischer ist als normale Plugin-Regeln. Da das Portal ein
+ * eigenständiges Werkzeug ist und nicht zum Seitendesign gehört, werden die
+ * farbgebenden Eigenschaften hier bewusst erzwungen. Der Geltungsbereich ist
+ * strikt auf .mxo-bem begrenzt, außerhalb wirkt nichts davon.
+ */
+
+.mxo-bem input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="submit"]):not([type="button"]),
+.mxo-bem textarea,
+.mxo-bem select {
+	background-color: #ffffff !important;
+	background-image: none !important;
+	color: #1d2327 !important;
+	border: 1px solid #dcdfe3 !important;
+	border-radius: 5px !important;
+	box-shadow: none !important;
+	font: inherit !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	padding: 0.55em 0.7em !important;
+	margin: 0 !important;
+	opacity: 1 !important;
+}
+
+.mxo-bem input::placeholder,
+.mxo-bem textarea::placeholder {
+	color: #8a929b !important;
+	opacity: 1 !important;
+}
+
+.mxo-bem input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+.mxo-bem textarea:focus {
+	border-color: #1e5fbe !important;
+	background-color: #ffffff !important;
+	color: #1d2327 !important;
+}
+
+.mxo-bem button.mxo-bem__btn {
+	background-color: #ffffff !important;
+	color: #1d2327 !important;
+	border: 1px solid #dcdfe3 !important;
+	border-radius: 5px !important;
+	text-transform: none !important;
+	letter-spacing: normal !important;
+	font: inherit !important;
+	padding: 0.55em 1.1em !important;
+}
+
+.mxo-bem button.mxo-bem__btn--primary {
+	background-color: #1e5fbe !important;
+	border-color: #1e5fbe !important;
+	color: #ffffff !important;
+}
+
+.mxo-bem button.mxo-bem__back {
+	background: none !important;
+	border: 0 !important;
+	color: #1e5fbe !important;
+	padding: 0 0 1rem !important;
+}
+
+.mxo-bem label,
+.mxo-bem .mxo-bem__field > span {
+	color: #1d2327 !important;
+	text-transform: none !important;
+	letter-spacing: normal !important;
+}
+
+/* Kopierbare Links je Titel */
+
+.mxo-bem__linkrow {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 0.35rem;
+}
+
+.mxo-bem__linklabel {
+	flex: 0 0 100%;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #5c6670 !important;
+}
+
+.mxo-bem__linkfield {
+	flex: 1 1 16rem;
+	min-width: 0;
+	font-size: 0.85rem !important;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+}
+
+.mxo-bem button.mxo-bem__btn--small {
+	padding: 0.4em 0.8em !important;
+	font-size: 0.85rem !important;
+}

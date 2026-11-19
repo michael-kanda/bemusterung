@@ -1,0 +1,105 @@
+/**
+ * Dropzone der Bemusterung.
+ *
+ * Farben kommen aus den Global Colors von GeneratePress, soweit vorhanden,
+ * mit neutralen Rückfallwerten für jede andere Umgebung.
+ */
+
+.mxo-bem-upload {
+	max-width: 42rem;
+	margin: 0 auto;
+}
+
+.mxo-bem-upload__title {
+	margin-bottom: 0.25em;
+}
+
+.mxo-bem-upload__hint {
+	color: var( --contrast-2, #575760 );
+	font-size: 0.9em;
+	margin-bottom: 1.5em;
+}
+
+.mxo-bem-upload__zone {
+	border: 2px dashed var( --contrast-3, #b2b2be );
+	border-radius: 6px;
+	padding: 3rem 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.mxo-bem-upload__zone:focus-visible {
+	outline: 2px solid var( --accent, #1e73be );
+	outline-offset: 2px;
+}
+
+.mxo-bem-upload__zone.is-over {
+	border-color: var( --accent, #1e73be );
+	background-color: var( --base-2, #f7f8f9 );
+}
+
+.mxo-bem-upload__zone-label {
+	display: block;
+	font-size: 1.1em;
+	margin-bottom: 0.75rem;
+}
+
+.mxo-bem-upload__browse {
+	background: none;
+	border: 0;
+	padding: 0;
+	color: var( --accent, #1e73be );
+	text-decoration: underline;
+	cursor: pointer;
+	font: inherit;
+}
+
+.mxo-bem-upload__input {
+	display: none;
+}
+
+.mxo-bem-upload__list {
+	list-style: none;
+	margin: 1.5rem 0 0;
+	padding: 0;
+}
+
+.mxo-bem-upload__item {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.6rem 0;
+	border-bottom: 1px solid var( --base-3, #e8eaed );
+}
+
+.mxo-bem-upload__name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.mxo-bem-upload__state {
+	flex-shrink: 0;
+	font-variant-numeric: tabular-nums;
+	color: var( --contrast-2, #575760 );
+}
+
+.mxo-bem-upload__item.is-done .mxo-bem-upload__state {
+	color: #1a7f4b;
+}
+
+.mxo-bem-upload__item.is-failed .mxo-bem-upload__state {
+	color: #b3261e;
+}
+
+.mxo-bem-upload--error {
+	padding: 1.5rem;
+	border-left: 4px solid #b3261e;
+	background-color: var( --base-2, #f7f8f9 );
+}
+
+.mxo-bem-feedback__hp {
+	position: absolute;
+	left: -9999px;
+}
