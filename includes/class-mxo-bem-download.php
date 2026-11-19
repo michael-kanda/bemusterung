@@ -258,6 +258,7 @@ class MXO_Bem_Download {
 		header( 'Content-Type: ' . $mime );
 		header( 'Content-Disposition: attachment; filename="' . rawurlencode( $filename ) . '"' );
 		header( 'X-Content-Type-Options: nosniff' );
+		header( 'X-Robots-Tag: noindex, nofollow, noarchive' );
 
 		$method = (string) MXO_Bem_Settings::get( 'delivery' );
 
